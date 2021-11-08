@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h1>عنوان : {{post.title}}</h1>
+<h2> نویسنده : {{post.author}}</h2>
+<h2> تاریخ : {{post.date_posted}}</h2>
+<p>{{post.text| linebreaks}}</p>
+<hr/>
+{% for comment in comments %}
+<p>{{ comment.name }}-{{ comment.created_on}}</p>
+{{ comment.body | linebreaks }}
+{% endfor %}
+<hr/>
+<h3>نظرات خود را با ما به اشتراک بگذارید
+</h3>
+<form method="post" >
+  {{ comment_form.as_p }}
+  {% csrf_token %}
+  <button type="submit" value="="send">
+</form>
+
+    </body>
+</html>
