@@ -11,13 +11,11 @@
 {{ comment.body | linebreaks }}
 {% endfor %}
 <hr/>
-<h3>نظرات خود را با ما به اشتراک بگذارید
-</h3>
+<h3>نظرات خود را با ما به اشتراک بگذارید</h3>
 <form method="post" >
   {{ comment_form.as_p }}
   {% csrf_token %}
-  <button type="submit" value="="send">
+  <button type="submit">Send</button>
 </form>
-
     </body>
 </html>

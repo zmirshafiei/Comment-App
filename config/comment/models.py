@@ -17,8 +17,5 @@ class Comment(models.Model):
     body = models.TextField()
     created_on = models.DateTimeField(auto_now_add=True)
     active = models.BooleanField(default=True)
-
-    class Meta:
-        ordering = ['created_on']
     def __str__(self):
-        return 'Comment {} by {}'.format(self.body, self.name)
+        return f'Comment {self.body} by {self.name}'
